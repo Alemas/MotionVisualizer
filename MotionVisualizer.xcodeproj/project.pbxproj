@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A1A25A91B7B76BB00F5DB52 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1A25A81B7B76BB00F5DB52 /* ConnectionManager.swift */; };
+		0A1A25DD1B7D2DCB00F5DB52 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1A25DC1B7D2DCB00F5DB52 /* CustomView.swift */; };
 		0A91BEEF1B7414BF00453129 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91BEEE1B7414BF00453129 /* AppDelegate.swift */; };
 		0A91BEF11B7414BF00453129 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91BEF01B7414BF00453129 /* ViewController.swift */; };
 		0A91BEF31B7414BF00453129 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A91BEF21B7414BF00453129 /* Images.xcassets */; };
@@ -25,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A1A25A81B7B76BB00F5DB52 /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
+		0A1A25DC1B7D2DCB00F5DB52 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		0A91BEE91B7414BF00453129 /* MotionVisualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionVisualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A91BEED1B7414BF00453129 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A91BEEE1B7414BF00453129 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 			children = (
 				0A91BEEE1B7414BF00453129 /* AppDelegate.swift */,
 				0A91BEF01B7414BF00453129 /* ViewController.swift */,
+				0A1A25DC1B7D2DCB00F5DB52 /* CustomView.swift */,
+				0A1A25A81B7B76BB00F5DB52 /* ConnectionManager.swift */,
 				0A91BEF21B7414BF00453129 /* Images.xcassets */,
 				0A91BEF41B7414BF00453129 /* Main.storyboard */,
 				0A91BEEC1B7414BF00453129 /* Supporting Files */,
@@ -209,6 +215,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A91BEF11B7414BF00453129 /* ViewController.swift in Sources */,
+				0A1A25DD1B7D2DCB00F5DB52 /* CustomView.swift in Sources */,
+				0A1A25A91B7B76BB00F5DB52 /* ConnectionManager.swift in Sources */,
 				0A91BEEF1B7414BF00453129 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +408,7 @@
 				0A91BF071B7414BF00453129 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A91BF081B7414BF00453129 /* Build configuration list for PBXNativeTarget "MotionVisualizerTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +417,7 @@
 				0A91BF0A1B7414BF00453129 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
