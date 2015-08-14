@@ -20,6 +20,9 @@ class ViewController: NSViewController {
     @IBOutlet weak var txfInfo: NSTextField!
     @IBOutlet weak var txfPeer: NSTextField!
     @IBOutlet weak var txfStatus: NSTextField!
+    
+    let queue = NSOperationQueue.mainQueue()
+    
     var dataLineCount = 0
     var infoLineCount = 0
     var gValues:NSArray?
@@ -30,11 +33,6 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         self.connectionManager.delegate = self
-        
-        self.graphicLayer.delegate = self
-        self.graphicLayer.frame = self.viewGraphic.frame
-//        self.graphicLayer.backgroundColor = NSColor.redColor().CGColor
-
     }
 
     override var representedObject: AnyObject? {
@@ -58,6 +56,8 @@ class ViewController: NSViewController {
             self.infoLineCount = 0
             self.txfInfo.stringValue = ""
         }
+//        self.txfInfo.stringValue += message + "\n"
+        
         self.txfInfo.stringValue += message + "\n"
         self.infoLineCount++
     }
@@ -85,9 +85,25 @@ extension ViewController : ConnectionManagerDelegate {
     func didReceiveData(manager: ConnectionManager, data: NSData!) {
         var out = [Float(), Float(), Float(), Float()]
         data.getBytes(&out, length: data.length)
-//        println(out)
-        self.writeData("\(out)")
+//        self.writeData("\(out)")
         self.gValues = out
+        
+        self.time++
+        
+        if CGFloat(self.time) > self.viewGraphic.frame.width {
+            self.time = 0
+        }
+        
+        self.viewGraphic.values = gValues
+        self.viewGraphic.time = self.time
+        
+        let operation = NSBlockOperation()
+        operation.addExecutionBlock { () -> Void in
+//            self.writeData("\(out)")
+            self.viewGraphic.setNeedsDisplayInRect(self.viewGraphic.frame)
+        }
+        
+        self.queue.addOperation(operation)
     }
     
     func didDisconnect(manager: ConnectionManager) {
